@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<HBox fx:id="hbox" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.edu.ukma.Controllers.DBGroupsController">
+
+    <VBox>
+         <BorderPane prefHeight="34.0" prefWidth="660.0">
+             <right>
+                 <Button fx:id="addNewButton" alignment="BASELINE_RIGHT" onAction="#addNew" text="Add new" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <cursor>
+                         <Cursor fx:constant="HAND" />
+                     </cursor>
+                 </Button>
+             </right>
+         <center>
+                   <TextField fx:id="filterField" alignment="BOTTOM_LEFT" maxWidth="-Infinity" onKeyTyped="#write" promptText="Filter by name" style="-fx-alignment: center;" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+              <Button fx:id="good" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleGood" text="Goods" BorderPane.alignment="CENTER" />
+         </left>
+         </BorderPane>
+        <TableView fx:id="tableview" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="565.0" prefWidth="800.0" style="-fx-border-color: black;">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+                <TableColumn fx:id="name" prefWidth="75.0" text="name" />
+                <TableColumn fx:id="description" prefWidth="75.0" text="description" />
+                <TableColumn fx:id="delete" prefWidth="40.0" text="delete" />
+                <TableColumn fx:id="update" prefWidth="40.0" text="update" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </TableView>
+    </VBox>
+
+</HBox>

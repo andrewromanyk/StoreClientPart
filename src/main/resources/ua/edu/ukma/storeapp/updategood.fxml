@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.edu.ukma.Controllers.Updategood">
+   <children>
+      <TextField fx:id="name" layoutX="335.0" layoutY="170.0" promptText="Name" />
+      <TextField fx:id="description" layoutX="335.0" layoutY="221.0" promptText="Description" />
+      <TextField fx:id="manufacturer" layoutX="335.0" layoutY="275.0" promptText="Manufacturer" />
+      <TextField fx:id="amount" layoutX="335.0" layoutY="324.0" promptText="Amount" />
+      <TextField fx:id="price" layoutX="335.0" layoutY="376.0" promptText="Price" />
+      <Button layoutX="731.0" layoutY="571.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="back" layoutX="24.0" layoutY="571.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <ComboBox fx:id="comboBoxGroup" layoutX="335.0" layoutY="440.0" prefWidth="150.0" />
+      <Text layoutX="307.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update product:">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="id_text" layoutX="389.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <TextField fx:id="add" layoutX="516.0" layoutY="324.0" promptText="Add" />
+      <TextField fx:id="sell" layoutX="158.0" layoutY="324.0" promptText="Sell" />
+      <Text fx:id="failureText" layoutX="244.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red; -fx-text-alignment: center;" wrappingWidth="332.0" AnchorPane.bottomAnchor="79.98828125" AnchorPane.topAnchor="504.05078125" />
+   </children>
+</AnchorPane>
