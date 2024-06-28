@@ -23,8 +23,10 @@ public class App extends Application {
 
     @Override
     public void stop() throws Exception {
-        super.stop();
         client.stopConnection();
+        System.out.println("Stop 1");
+        super.stop();
+        System.out.println("Stop 2");
     }
 
     // Method to show the login scene

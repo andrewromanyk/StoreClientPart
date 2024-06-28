@@ -21,6 +21,8 @@ public class StoreClientTCP {
     private BufferedReader in;
     private String IP;
     private int Port;
+    private Thread heartbeat;
+
 
     public static void main(String[] args) throws InterruptedException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException, IOException {
         StoreClientTCP client = new StoreClientTCP();
@@ -64,7 +66,7 @@ public class StoreClientTCP {
 //            return false;
 //        }
         //heartbeat check
-        new Thread(() -> {
+        heartbeat = new Thread(() -> {
             while(true){
                 if(!ping()){
                     try {
@@ -82,8 +84,13 @@ public class StoreClientTCP {
                 }
                 System.out.println("Tried!");
             }
-        }).start();
+        });
+        heartbeat.start();
         return true;
+    }
+
+    public void stopHeartBeat(){
+        heartbeat.interrupt();
     }
 
     public int listen() throws IOException {
@@ -273,6 +280,7 @@ public class StoreClientTCP {
         if (in != null) in.close();
         if (out != null) out.close();
         if (clientSocket != null) clientSocket.close();
+        stopHeartBeat();
     }
 
     byte[] stringToArray(String string) {
